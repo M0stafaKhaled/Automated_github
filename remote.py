@@ -13,8 +13,8 @@ TOKEN = os.getenv('TOKEN')
 repoName = "ml"
 
 g = Github(TOKEN)
-organization = g.get_organization('moatafaKhaled')
-repo = organization.create_repo(repoName, 'test script')
+user = g.get_user()
+repo = user.create_repo('test')
 repoUrl = repo.html_url
 print(repoUrl)
 # #
