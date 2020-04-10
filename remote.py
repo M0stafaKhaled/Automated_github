@@ -12,9 +12,10 @@ load_dotenv(dotenv_path=env_path)
 TOKEN = os.getenv('TOKEN')
 repoName = "ml"
 
-g = Github(TOKEN)
+g = Github(username, password)
 user = g.get_user()
-repo = user.create_repo('test')
+repo = user.create_repo(sys.argv[1])
+
 repoUrl = repo.html_url
 print(repoUrl)
 # #
